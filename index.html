@@ -78,7 +78,7 @@
   .result-card { background:#fff; border:2px solid var(--gold); border-radius:8px; padding:36px 32px; box-shadow:0 8px 32px rgba(13,27,42,0.12); }
   .result-icon { font-size:3rem; margin-bottom:10px; }
   .result-name { font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--royal); margin-bottom:4px; }
-  .result-seat { font-size:.85rem; color:var(--muted); margin-bottom:20px; }
+  .result-contact { font-size:.85rem; color:var(--muted); margin-bottom:20px; }
   .score-row { display:flex; justify-content:center; gap:32px; margin:20px 0 10px; flex-wrap:wrap; }
   .score-box { text-align:center; }
   .score-box-val { font-family:'JetBrains Mono',monospace; font-size:2.4rem; font-weight:600; color:var(--navy); line-height:1; }
@@ -122,7 +122,7 @@
   <div class="reg-wrap">
     <div class="card">
       <div class="card-title">Student Registration</div>
-      <div class="card-note">Please fill in your details carefully. Your name and seat number will be recorded along with your score. The test begins only after registration.</div>
+      <div class="card-note">Please fill in your details carefully. Your name and contact number will be recorded along with your score. The test begins only after registration.</div>
       <div class="field">
         <label for="studentName">Full Name *</label>
         <input type="text" id="studentName" placeholder="e.g. Rahul Sharma" autocomplete="off" />
@@ -131,7 +131,7 @@
       <div class="field">
         <label for="contactNo">Contact Number *</label>
         <input type="text" id="contactNo" placeholder="e.g. 9876543210" autocomplete="off" />
-        <div class="err-msg" id="errContact">Please enter your seat number.</div>
+        <div class="err-msg" id="errContact">Please enter your contact number.</div>
       </div>
       <button class="btn-start" onclick="startTest()">Begin Test →</button>
     </div>
@@ -482,7 +482,7 @@
     <div class="result-card">
       <div class="result-icon">📋</div>
       <div class="result-name" id="resName">—</div>
-      <div class="result-seat" id="resSeat">Contact: —</div>
+      <div class="result-contact" id="rescontact">Contact: —</div>
       <div class="score-row">
         <div class="score-box">
           <div class="score-box-val" id="resMCQ">—</div>
@@ -567,7 +567,7 @@ function submitTest() {
 
   // Show result
   document.getElementById('resName').textContent  = studentName;
-  document.getElementById('resSeat').textContent  = 'Contact: ' + contactNo;
+  document.getElementById('rescontact').textContent  = 'Contact: ' + contactNo;
   document.getElementById('resMCQ').textContent   = mcqScore;
   document.getElementById('resTF').textContent    = tfScore;
   document.getElementById('resTotal').textContent = total + '/30';
