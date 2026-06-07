@@ -585,7 +585,7 @@ function submitTest() {
   const logEl = document.getElementById('logStatus');
   const timestamp = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
   const payload = {
-    timestamp, name: studentName, seat: contactNo,
+    timestamp, name: studentName, contact: contactNo,
     mcq_score: mcqScore + '/20', tf_score: tfScore + '/10', total_score: total + '/30',
     ...responses
   };
